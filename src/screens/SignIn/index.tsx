@@ -3,8 +3,15 @@ import { Text, Image, View, StatusBar } from "react-native";
 import { styles } from "./style"
 import IllustrationImg from '../../assets/illustration.png';
 import { ButtonIcon } from "../../components/ButtonIcon"
+import { useNavigation } from "@react-navigation/native";
+
 
 export function SignIn() {
+    const navigation = useNavigation()
+    function hanleSignIn() {
+        navigation.navigate('Home')
+    }
+
     const [text, setText] = useState('')
 
 
@@ -27,7 +34,7 @@ export function SignIn() {
                 </Text>
                 <ButtonIcon
                     title="Entrar com o Discord"
-                    activeOpacity={0.7}
+                    onPress={hanleSignIn}
                 />
             </View>
 
